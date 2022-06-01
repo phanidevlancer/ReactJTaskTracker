@@ -1,15 +1,16 @@
 import Button from "./Button"
 
-const Header = ({title}) => {
+const Header = ({title,visibiltyChange,formVisibility}) => {
 
   const headerAddOnclick = () => {
     console.log('Header add click called');
+    visibiltyChange()
   }
 
   return (
     <header className='header'>
        <h1>{title}</h1> 
-       <Button title='Add' color='green' onClick={headerAddOnclick}/>
+       <Button title={formVisibility ? 'Close' : 'Add'} color={formVisibility ? 'red' : 'green'} onClick={headerAddOnclick}/>
         </header>
   )
 }
